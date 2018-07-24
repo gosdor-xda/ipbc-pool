@@ -10,7 +10,7 @@ require('./lib/configReader.js');
 require('./lib/logger.js');
 
 
-global.redisClient = redis.createClient(config.redis.port, config.redis.host);
+global.redisClient = redis.createClient(config.redis.port, config.redis.host,{db: config.redis.db});
 
 
 if (cluster.isWorker){
@@ -86,10 +86,10 @@ var singleModule = (function(){
         }
         else{
             spawnPoolWorkers();
-            spawnBlockUnlocker();
-            spawnPaymentProcessor();
-            spawnApi();
-            spawnChartsDataCollector();
+            //spawnBlockUnlocker();
+            //spawnPaymentProcessor();
+            //spawnApi();
+            //spawnChartsDataCollector();
         }
 
         spawnCli();
