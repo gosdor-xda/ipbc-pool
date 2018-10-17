@@ -18,6 +18,6 @@
         "cryptonote-util": "https://github.com/MoneroOcean/node-cryptoforknote-util.git"
     },
     "engines": {
-        "node": ">=0.10"
+        "node": ">=4.0"
     }
 }
